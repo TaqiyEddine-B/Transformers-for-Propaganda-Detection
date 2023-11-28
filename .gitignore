@@ -1,0 +1,10 @@
+temp/
+wandb/
+.conda/
+output/
+*.pyc
+notebooks/
+*.pth
+venv/
+requirements-dev.txt
+.vscode/

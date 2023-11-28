@@ -1,0 +1,147 @@
+exps_final:
+  marbert_focal_multi :
+    model_name : UBC-NLP/MARBERT
+    loss_type : focal
+    model_archi : multitask
+    seed : 1234
+    learning_rate  : 0.00002
+    epochs : 5
+    batch_size : 16
+    preprocessing : False
+    stopwords_size : 0
+
+exps1:
+  marbert_ce_mono :
+    model_name : UBC-NLP/MARBERT
+    loss_type : cross-entropy
+    model_archi : monotask
+    seed : 1234
+    learning_rate  : 0.00002
+    epochs : 5
+    batch_size : 16
+    preprocessing : False
+    stopwords_size : 0
+
+  marbert_ce_multi :
+    model_name : UBC-NLP/MARBERT
+    loss_type : cross-entropy
+    model_archi : multitask
+    seed : 1234
+    learning_rate  : 0.00002
+    epochs : 5
+    batch_size : 16
+    preprocessing : False
+    stopwords_size : 0
+
+  marbert_ce_feature :
+    model_name : UBC-NLP/MARBERT
+    loss_type : cross-entropy
+    model_archi : feature
+    seed : 1234
+    learning_rate  : 0.00002
+    epochs : 5
+    batch_size : 16
+    preprocessing : False
+    stopwords_size : 0
+# marbert + focal
+
+  marbert_focal_mono :
+    model_name : UBC-NLP/MARBERT
+    loss_type : focal
+    model_archi : monotask
+    seed : 1234
+    learning_rate  : 0.00002
+    epochs : 5
+    batch_size : 16
+    preprocessing : False
+    stopwords_size : 0
+
+  marbert_focal_multi :
+    model_name : UBC-NLP/MARBERT
+    loss_type : focal
+    model_archi : multitask
+    seed : 1234
+    learning_rate  : 0.00002
+    epochs : 5
+    batch_size : 16
+    preprocessing : False
+    stopwords_size : 0
+
+  marbert_focal_feature :
+    model_name : UBC-NLP/MARBERT
+    loss_type : focal
+    model_archi : feature
+    seed : 1234
+    learning_rate  : 0.00002
+    epochs : 5
+    batch_size : 16
+    preprocessing : False
+    stopwords_size : 0
+
+exps2:
+  marbert_ce_mono :
+    model_name : aubmindlab/bert-base-arabertv2
+    loss_type : cross-entropy
+    model_archi : monotask
+    seed : 1234
+    learning_rate  : 0.00002
+    epochs : 5
+    batch_size : 16
+    preprocessing : False
+    stopwords_size : 0
+
+  marbert_ce_multi :
+    model_name : aubmindlab/bert-base-arabertv2
+    loss_type : cross-entropy
+    model_archi : multitask
+    seed : 1234
+    learning_rate  : 0.00002
+    epochs : 5
+    batch_size : 16
+    preprocessing : False
+    stopwords_size : 0
+
+  marbert_ce_feature :
+    model_name : aubmindlab/bert-base-arabertv2
+    loss_type : cross-entropy
+    model_archi : feature
+    seed : 1234
+    learning_rate  : 0.00002
+    epochs : 5
+    batch_size : 16
+    preprocessing : False
+    stopwords_size : 0
+# marbert + focal
+
+  marbert_focal_mono :
+    model_name : aubmindlab/bert-base-arabertv2
+    loss_type : focal
+    model_archi : monotask
+    seed : 1234
+    learning_rate  : 0.00002
+    epochs : 5
+    batch_size : 16
+    preprocessing : False
+    stopwords_size : 0
+
+  marbert_focal_multi :
+    model_name : aubmindlab/bert-base-arabertv2
+    loss_type : focal
+    model_archi : multitask
+    seed : 1234
+    learning_rate  : 0.00002
+    epochs : 5
+    batch_size : 16
+    preprocessing : False
+    stopwords_size : 0
+
+  marbert_focal_feature :
+    model_name : aubmindlab/bert-base-arabertv2
+    loss_type : focal
+    model_archi : feature
+    seed : 1234
+    learning_rate  : 0.00002
+    epochs : 5
+    batch_size : 16
+    preprocessing : False
+    stopwords_size : 0

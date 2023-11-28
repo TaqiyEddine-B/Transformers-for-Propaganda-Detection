@@ -1,0 +1,45 @@
+exps_test:
+  marbert_ce_mono :
+    model_name : UBC-NLP/MARBERT
+    loss_type : bce
+    model_archi : multitask
+    seed : 42
+    learning_rate  : 0.00001
+    epochs : 5
+    batch_size : 8
+    preprocessing : False
+    stopwords_size : 0
+
+exps1:
+  marbert_ce_mono :
+    model_name : UBC-NLP/MARBERT
+    loss_type : bce
+    model_archi : monotask
+    seed : 42
+    learning_rate  : 0.00001
+    epochs : 5
+    batch_size : 8
+    preprocessing : False
+    stopwords_size : 0
+
+  marbert_ce_mono2 :
+    model_name : UBC-NLP/MARBERT
+    loss_type : bce
+    model_archi : monotask
+    seed : 42
+    learning_rate  : 0.00001
+    epochs : 7
+    batch_size : 8
+    preprocessing : False
+    stopwords_size : 0
+
+  marbert_ce_mono3 :
+    model_name : UBC-NLP/MARBERT
+    loss_type : bce
+    model_archi : monotask
+    seed : 42
+    learning_rate  : 0.00001
+    epochs : 8
+    batch_size : 8
+    preprocessing : False
+    stopwords_size : 0
