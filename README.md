@@ -44,12 +44,31 @@ python main.py
 If you use this code in your research, please consider citing the following paper:
 
 ```
-@article{hte2023,
-  title={HTE at ArAIEval Shared Task: Persuasion techniques detection: an interdisciplinary approach to identifying and counteracting manipulative strategies},
-  author={Khaldi, Hadjer and Bouklouha, Taqiy Eddine},
-  booktitle={Proceedings of the First Arabic Natural Language Processing Conference (ArabicNLP 2023)},
-  year={2023},
-  address={Singapore},
-  organization={Association for Computational Linguistics}
+@inproceedings{hadjer-bouklouha-2023-hte,
+    title = "{HTE} at {A}r{AIE}val Shared Task: Integrating Content Type Information in Binary Persuasive Technique Detection",
+    author = "Hadjer, Khaldi  and
+      Bouklouha, Taqiy",
+    editor = "Sawaf, Hassan  and
+      El-Beltagy, Samhaa  and
+      Zaghouani, Wajdi  and
+      Magdy, Walid  and
+      Abdelali, Ahmed  and
+      Tomeh, Nadi  and
+      Abu Farha, Ibrahim  and
+      Habash, Nizar  and
+      Khalifa, Salam  and
+      Keleg, Amr  and
+      Haddad, Hatem  and
+      Zitouni, Imed  and
+      Mrini, Khalil  and
+      Almatham, Rawan",
+    booktitle = "Proceedings of ArabicNLP 2023",
+    month = dec,
+    year = "2023",
+    address = "Singapore (Hybrid)",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2023.arabicnlp-1.46",
+    pages = "502--507",
+    abstract = "Propaganda frequently employs sophisticated persuasive strategies in order to influence public opinion and manipulate perceptions. As a result, automating the detection of persuasive techniques is critical in identifying and mitigating propaganda on social media and in mainstream media. This paper proposes a set of transformer-based models for detecting persuasive techniques in tweets and news that incorporate content type information as extra features or as an extra learning objective in a multitask learning setting. In addition to learning to detect the presence of persuasive techniques in text, our best model learns specific syntactic and lexical cues used to express them based on text genre (type) as an auxiliary task. To optimize the model and deal with data imbalance, a focal loss is used. As part of ArabicNLP2023-ArAIEval shared task, this model achieves the highest score in the shared task 1A out of 13 participants, according to the official results, with a micro-F1 of 76.34{\%} and a macro-F1 of 73.21{\%} on the test dataset.",
 }
 ```
