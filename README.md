@@ -2,9 +2,13 @@ This repository contains the code and resources associated with the paper titled
 
 
 ## Table of Contents
-- [Introduction](#introduction)
 - [Installation](#installation)
+- [Project Structure](#project-structure)
+- [Data](#data)
+- [Tracking Experiments](#tracking-experiments)
+- [Usage](#usage)
 - [Citation](#citation)
+
 
 # Introduction
 The MARBERT model was fine-tuned for two tasks: identifying persuasive techniques in text (primary binary classification) and classifying text types (tweets or news - auxiliary task). Leveraging the imbalance in the dataset, focal loss was employed for optimization. The system achieved the highest ranking on the leaderboard during testing.
@@ -19,13 +23,45 @@ cd Transformers-for-Propaganda-Detection
 
 # Create a virtual environment
 python -m venv venv
-source venv/bin/activate
+source venv/bin/activate # On Windows, use `venv\Scripts\activate`
 
 # Install dependencies
 pip install -r requirements.txt
 ```
 
-#Usage
+# Project Structure
+The project structure is as follows:
+```bash
+.
+├── data
+│   ├── tasklA_dev.jsonl
+│   ├── tasklA_test_no_label.jsonl
+│   ├── tasklA_test.jsonl
+│   ├── tasklA_train_dev.jsonl
+│   ├── tasklA_train.jsonl
+│   ├── tasklB_dev.jsonl
+│   ├── task1B_test_no_label.jsonl
+│   └── task1B_train.jsonl
+├── src
+│   ├── models
+│   ├── eval_task1a.py
+│   ├── loss.py
+│   ├── main_task1A.py
+│   ├── main_task1B.py
+│   └── utils.py
+├── requirements.txt
+└── README.md
+
+- `data/`: Directory containing the input data in jsonl format.
+- `src/`: Directory containing the source code.
+- `src/main_task1A.py`: Main script for training and evaluation of the task1A.
+- `src/main_task1B.py`: Main script for training and evaluation of the task1B.
+- `requirements.txt`: File containing the dependencies.
+- `README.md`: This file.
+
+```
+
+## Data
 The input data is expected to be in the `data/` directory. The expected format is a jsonl file with the following structure:
 
 ```json
@@ -33,10 +69,16 @@ The input data is expected to be in the `data/` directory. The expected format i
 {"id": "1", "text": "This is another sample text.", "label": 0}
 ```
 
+# Tracking Experiments
+The `wandb` library is used for tracking experiments.
+
+# Usage
 The following code blocks outline the steps for running your code:
-```
+```bash
 # Run the main training script
-python main.py
+python src/main_task1B.py
+# or
+python src/main_task1A.py
 ```
 
 

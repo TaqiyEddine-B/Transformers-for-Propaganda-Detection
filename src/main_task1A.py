@@ -1,6 +1,6 @@
 import logging
 import logging.handlers
-
+import os
 import wandb
 import yaml
 from bbc import BertBinaryClassifier
@@ -8,6 +8,8 @@ from utils import evaluate, read_data_1a, set_seed,save_output_file
 
 
 def pipeline(hyper_params:list):
+
+
 
     train_file = "data/task1A_train.jsonl"
 

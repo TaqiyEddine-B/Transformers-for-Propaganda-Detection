@@ -1,20 +1,24 @@
 import logging
 import logging.handlers
-import random
+import os
 
 import pandas as pd
-import torch
 import yaml
-from bmc import BertMultilabelClassifier
-from utils import evaluate, read_data_1b, set_seed
 
 import wandb
-
+from models.bmc import BertMultilabelClassifier
+from utils import evaluate, read_data_1b, set_seed
 
 logging.basicConfig(format='%(levelname)s : %(message)s', level=logging.INFO)
 
 
 def pipeline(hyper_params:list):
+
+    # create output directories if they don't exist
+    OUTPUT_DIR = "output/task1B"
+
+    if not os.path.exists(OUTPUT_DIR):
+        os.makedirs(OUTPUT_DIR)
 
     wandb.init(
         project="araieval_subtaskB",
@@ -63,7 +67,7 @@ def pipeline(hyper_params:list):
         return [idx for idx, value in enumerate(list_to_check) if value == item_to_find]
 
 
-    with open(f"output/test_1B/task1B_output_{run_name}.tsv", "w") as file:
+    with open(f"{OUTPUT_DIR}/task1B_output_{run_name}.tsv", "w") as file:
       file.write("id\tlabel\n")
       for (id,pred) in zip(test_ids,predicted_labels.cpu().tolist()):
 
@@ -79,21 +83,26 @@ def pipeline(hyper_params:list):
     return {"micro_f1": micro_f1, "macro_f1": macro_f1}
 
 
-with open("exps_1b.yaml", 'r') as stream:
-    data_loaded = yaml.safe_load(stream)
-exps =data_loaded['exps_test']
+def launch_experiments():
+    with open("exps_1b.yaml", 'r') as stream:
+        data_loaded = yaml.safe_load(stream)
+    exps =data_loaded['exps_test']
 
-for exp in exps:
-    param = exps[exp]
-    print(f'\n** experience : {exp}\n')
-    print(param)
-    wandb.init(
-        project="araieval_subtaskB",
-        config =param
-    )
-    seed = param['seed']
-    set_seed(seed)
+    for exp in exps:
+        param = exps[exp]
+        print(f'\n** experience : {exp}\n')
+        print(param)
+        wandb.init(
+            project="araieval_subtaskB",
+            config =param
+        )
+        seed = param['seed']
+        set_seed(seed)
 
-    metrics = pipeline(param)
-    wandb.log(metrics)
-    wandb.finish()
+        metrics = pipeline(param)
+        wandb.log(metrics)
+        wandb.finish()
+
+# main function
+if __name__ == "__main__":
+    launch_experiments()
