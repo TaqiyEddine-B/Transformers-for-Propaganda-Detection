@@ -12,7 +12,7 @@ from utils import evaluate, read_data_1b, set_seed
 logging.basicConfig(format='%(levelname)s : %(message)s', level=logging.INFO)
 
 
-def pipeline(hyper_params:list):
+def pipeline(hyper_params:dict):
 
     # create output directories if they don't exist
     OUTPUT_DIR = "output/task1B"

@@ -5,3 +5,4 @@ scikit-learn
 balanced-loss
 torch
 wandb==0.17.9
+balanced-loss==0.1.0
